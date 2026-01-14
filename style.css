@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.todo-app {
+    width: 100%;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.todo-app h2 i {
+    margin-left: 10px;
+    color: #4e085f;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#add-btn {
+    border: none;
+    outline: none;
+    padding: 16px;
+    background: #4e085f;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+    margin-right: -1px;
+    transition: background-color 0.3s ease;
+}
+
+#add-btn:hover {
+    background: #153677;
+}
+
+#list-container {
+    list-style: none;
+}
+
+#list-container li {
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#list-container li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>');
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#list-container li.checked {
+    color: #555;
+    text-decoration: line-through;
+    background: #f0f0f0;
+}
+
+#list-container li.checked::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%234e085f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>');
+}
+
+#list-container li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#list-container li span:hover {
+    background: #edeef0;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+#list-container li:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn i {
+    color: #ff5757;
+    font-size: 1.1rem;
+}
+
+.delete-btn:hover i {
+    color: #ff0
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 50px auto 20px;
+        padding: 30px 20px 50px;
+    }
+    
+    .todo-app h2 {
+        font-size: 1.5rem;
+    }
+}
